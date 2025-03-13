@@ -46,5 +46,18 @@ import numpy as np
 # a = np.arange(3) # 0,1,2 배열 만들기
 
 # 브로드캐스팅 불가 연산
+# 3,2 array와 1,3 array는 연산이 불가함. 최소공배수로 맞출수는 없기 때문임
 # print(M+a)
+
+# -------------------------------
+
+# broad casting을 하는 가장 큰 이유 --> 모든 행,열에 대해 연산 해야함
+# 실수 연산이니까 정확하지 않음. 그러므로 표준편차의 합이 0이 나올수가 없음.
+
+X = np.random.random((10,3))
+
+Xmean = X.mean(0)
+print(Xmean)
+X_centered = X - Xmean
+print(X_centered.mean(0))
 
