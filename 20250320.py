@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 #------------------------------------------------------------------------------
 # Exploring Fancy Index
 #------------------------------------------------------------------------------
@@ -120,9 +121,47 @@ x[[0,0]]=[4,6]
 
 i = [2,3,3,4,4,4]
 x[i]+=1
-print(x)
+# print(x)
 
 # [6. 0. 1. 1. 1. 0. 0. 0. 0. 0.]
 
 #------------------------------------------------------------------------------
+
+x = np.zeros(10)
+np.add.at(x,i,1) # at 차례대로 증가 시켜라
+# print(x)
+
+# [0. 0. 1. 2. 3. 0. 0. 0. 0. 0.]
+
+#------------------------------------------------------------------------------
+
+# np.random.seed(42)
+# x = np.random.randn(100)
+#
+# # compute a histogram by hand
+# bins = np.linspace(-5, 5, 20)
+# counts = np.zeros_like(bins)
+#
+# # find the appropriate bin for each x
+# i = np.searchsorted(bins, x)
+#
+# # add 1 to each of these bins
+# np.add.at(counts, i, 1)
+#
+# plt.plot(bins,counts,linestyle='steps')
+
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+# Sorting Arrays
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+
+# selection sort time complexity = O(N^2)
+def selection_sort(x): # 원소들 중에 최솟값을 찾아서 맨 앞으로 배치
+    for i in range(len(x)):
+        swap = i + np.argmin(x[i:])
+        (x[i],x[swap])=(x[swap],x[i])
+    return x
+
+x = np.array([2,1,4,3,5])
 
