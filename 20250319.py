@@ -15,7 +15,8 @@ import pandas as pd
 # print(x!=3)
 # print(x==3)
 
-rng = np.random.RandomState(0)
-x = rng.randint(10, size=(3,4)) # 3행 4열의 랜덤 정수 배열 생성
-print(x)
-print(x<6)
+# rng = np.random.RandomState(0)
+# x = rng.randint(10, size=(3,4)) # 3행 4열의 랜덤 정수 배열 생성
+# print(x)
+# print(x<6)
+
